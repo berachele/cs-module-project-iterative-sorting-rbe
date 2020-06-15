@@ -10,6 +10,18 @@ def linear_search(arr, target):
 def binary_search(arr, target):
 
     # Your code here
-
-
+    low = 0
+    high = len(arr)-1
+    while low <= high:
+        print('IN WHILE LOOP')
+        middle = int((low+high)/2) #<-- infinite loop of number is lower, inifinite loop of NUMBER IS HIGHER if I do (low+high)//2
+        if target < arr[middle]:
+            print("NUMBER IS LOWER")
+            high = middle -1
+        elif target > arr[middle]:
+            print("NUMBER IS HIGHER")
+            low = middle +1
+        else:
+            print("YOU GOT IT!")
+            return middle
     return -1  # not found
